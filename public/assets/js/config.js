@@ -4,8 +4,8 @@
    ========================================================================== */
 window.NAVI_CONFIG = {
   company: {
-    name: 'CÔNG TY TNHH SX TM TỔNG HỢP SG CHEM',
-    address: '11 đường 18E, Phường Bình Hưng Hòa, TP Hồ Chí Minh, Việt Nam'
+    name: 'NAVI KING',
+    address: '21A đường 19A, Phường Bình Hưng Hòa, TP. Hồ Chí Minh'
   },
 
   contact: {
@@ -17,10 +17,10 @@ window.NAVI_CONFIG = {
   // Kênh bán hàng & liên hệ trực tuyến: dán link đầy đủ (https://...).
   // Zalo có thể điền số điện thoại (tự chuyển thành link zalo.me).
   channels: {
-    shopee: '',
-    tiktok: '',
-    zalo: '',
-    facebook: ''
+    shopee: 'https://s.shopee.vn/114oQhmiGC',
+    tiktok: 'https://vt.tiktok.com/ZSsBd4yE5/?page=TikTokShop',
+    zalo: '0969707171',
+    facebook: 'https://www.facebook.com/share/1DqHC7bLRk/?mibextid=wwXIfr'
   },
 
   form: {
