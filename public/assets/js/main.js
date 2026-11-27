@@ -156,6 +156,21 @@
     });
   }
 
+  /* ---------- Hero: cả quạt thẻ sản phẩm nghiêng theo chuột ---------- */
+  var hero = document.querySelector('[data-hero]');
+  var fan = document.querySelector('.hero__fan');
+  if (hero && fan && !reduceMotion && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    hero.addEventListener('pointermove', function (e) {
+      var r = hero.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      fan.style.setProperty('--sy', (x * 14).toFixed(2) + 'deg');
+      fan.style.setProperty('--sx', (-y * 8).toFixed(2) + 'deg');
+    });
+    hero.addEventListener('pointerleave', function () {
+      fan.style.setProperty('--sy', '0deg'); fan.style.setProperty('--sx', '0deg');
+    });
+  }
+
   /* ---------- Đánh dấu mục đang xem trên menu và chip sản phẩm ---------- */
   if ('IntersectionObserver' in window) {
     var spy = function (selector, links) {
