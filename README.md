@@ -2,6 +2,8 @@
 
 > **Tự động deploy:** mỗi lần đẩy code (push) lên nhánh `main`, Cloudflare Workers Builds tự build và đưa lên https://naviking.vn trong khoảng 1 phút.
 >
+> **Trước mỗi lần commit:** chạy `sh scripts/bump-version.sh` để gắn phiên bản mới cho CSS/JS (tránh trình duyệt dùng file cũ đã cache).
+>
 > Cấu trúc repo: `wrangler.jsonc` (cấu hình Cloudflare) · `public/` (toàn bộ website).
 
 
