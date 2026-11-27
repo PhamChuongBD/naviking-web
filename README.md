@@ -29,7 +29,7 @@ Mọi thông tin hay thay đổi nằm trong **một file duy nhất**, không c
 | `form.demo` | `true` = form luôn giả lập gửi thành công (chỉ cho bản demo) |
 | `map.embed` | `true` = nhúng Google Maps theo địa chỉ |
 
-Ngoài ra trong `index.html` còn `[TÊN-MIỀN]` ở thẻ `canonical` — thay bằng tên miền thật.
+Tên miền `naviking.vn` đã được điền sẵn trong thẻ canonical, Open Graph, `robots.txt` và `sitemap.xml`.
 
 ## 2. Hình ảnh
 
