@@ -281,11 +281,18 @@
           setTimeout(simulate ? resolve : function () { reject(new Error('no-endpoint')); }, 1200);
         });
       }
+      // Google Apps Script: gửi dạng text/plain để tránh lỗi CORS (preflight)
+      var isGAS = /script\.google\.com/.test(endpoint);
       return fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: isGAS ? { 'Content-Type': 'text/plain;charset=utf-8' } : { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify(data)
-      }).then(function (res) { if (!res.ok) throw new Error('HTTP ' + res.status); });
+      }).then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.text().then(function (t) {
+          try { var r = JSON.parse(t); if (r && r.ok === false) throw new Error(r.error || 'error'); } catch (err) { if (err instanceof SyntaxError) return; throw err; }
+        });
+      });
     };
 
     form.addEventListener('submit', function (e) {

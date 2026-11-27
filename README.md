@@ -53,6 +53,18 @@ Form gửi dữ liệu dạng JSON (POST) tới `form.endpoint`. Dữ liệu g�
 
 Khi **chưa** có endpoint: chạy trên máy (file://, localhost) form giả lập gửi thành công để xem thử; trên tên miền thật form báo lỗi — tránh việc khách tưởng đã gửi mà không ai nhận.
 
+## Kết nối form với Google Sheet
+
+1. Mở Google Sheet → **Tiện ích mở rộng → Apps Script**.
+2. Xoá code mặc định, dán toàn bộ nội dung file `scripts/google-apps-script.gs`, bấm **Lưu**.
+3. **Triển khai → Tùy chọn triển khai mới** → biểu tượng bánh răng → **Ứng dụng web**:
+   - Thực thi với tư cách: **Tôi**
+   - Người có quyền truy cập: **Bất kỳ ai**
+4. Bấm **Triển khai**, cấp quyền khi Google hỏi, sao chép **URL ứng dụng web** (kết thúc bằng `/exec`).
+5. Dán URL đó vào `form.endpoint` trong `public/assets/js/config.js`.
+
+Mỗi yêu cầu sẽ thành một dòng trong tab **"Liên hệ website"** (tự tạo). Muốn nhận email thông báo: điền email vào `NOTIFY_EMAIL` trong script rồi **Triển khai → Quản lý triển khai → Sửa → Phiên bản mới**.
+
 ## 4. Nội dung sản phẩm
 
 Mỗi sản phẩm là một khối `<article class="product">` trong `index.html` (mô tả, điểm nổi bật, hướng dẫn sử dụng, lưu ý). Lưu ý từ hồ sơ: tỷ lệ pha, hướng dẫn sử dụng và tuyên bố hiệu quả cần đối chiếu với công thức, nhãn hàng hóa và thử nghiệm thực tế trước khi dùng trong quảng cáo chính thức.

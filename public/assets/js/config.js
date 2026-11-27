@@ -24,7 +24,7 @@ window.NAVI_CONFIG = {
   },
 
   form: {
-    // URL nhận dữ liệu form dạng POST JSON (Formspree, Google Apps Script, API riêng...).
+    // URL Web App của Google Apps Script (ghi vào Google Sheet) — dạng https://script.google.com/macros/s/.../exec
     endpoint: '',
     // true = luôn giả lập gửi thành công (chỉ dùng cho bản demo). Khi chạy thật để false.
     demo: false
