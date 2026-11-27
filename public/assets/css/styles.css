@@ -299,6 +299,9 @@ button, input, select, textarea { font: inherit; color: inherit; }
   background: var(--c-navy); border-radius: 6px; color: #fff; text-decoration: none;
   box-shadow: inset 0 0 0 1px rgba(255,255,255,.08); transition: box-shadow .3s, transform .3s var(--ease);
 }
+.channel__logo { display: inline-flex; align-items: center; justify-content: center; width: 52px; height: 52px; margin-bottom: 14px; border-radius: 14px; background: var(--brand, #333); box-shadow: 0 10px 24px -10px var(--brand, #000), inset 0 0 0 1px rgba(255,255,255,.12); transition: transform .4s var(--ease-out); }
+.channel__logo img { width: 28px; height: 28px; }
+a.channel[href]:hover .channel__logo { transform: translateY(-2px) scale(1.06); }
 .channel__name { font: 700 1.625rem/1.15 var(--f-display); letter-spacing: -.03em; }
 .channel__cta { margin-top: auto; font-size: .9375rem; font-weight: 600; color: var(--c-gold); }
 a.channel[href]:hover { box-shadow: inset 0 0 0 1px var(--c-gold); transform: translateY(-3px); }
