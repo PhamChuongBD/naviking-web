@@ -209,6 +209,17 @@
     if (/^#p-/.test(location.hash)) openProduct(location.hash);
   }
 
+  /* ---------- Bộ ảnh nhỏ trong showroom (đổi ảnh lớn) ---------- */
+  document.querySelectorAll('[data-gallery]').forEach(function (g) {
+    var main = g.querySelector('[data-gallery-main]');
+    g.addEventListener('click', function (e) {
+      var b = e.target.closest('button[data-src]'); if (!b || !main) return;
+      g.querySelectorAll('button[data-src]').forEach(function (x) { x.classList.toggle('is-active', x === b); });
+      main.style.opacity = 0;
+      setTimeout(function () { main.srcset = b.getAttribute('data-srcset') || ''; main.src = b.getAttribute('data-src'); main.style.opacity = 1; }, reduceMotion ? 0 : 200);
+    });
+  });
+
   /* ---------- Đánh dấu mục đang xem trên menu và chip sản phẩm ---------- */
   if ('IntersectionObserver' in window) {
     var spy = function (selector, links) {
