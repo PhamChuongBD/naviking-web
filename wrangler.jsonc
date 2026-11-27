@@ -1,0 +1,10 @@
+// Cấu hình Cloudflare Workers — site tĩnh NAVI KING
+// "name" PHẢI trùng tên Worker trên Cloudflare dashboard.
+{
+  "name": "curly-term-560e",
+  "compatibility_date": "2026-11-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}

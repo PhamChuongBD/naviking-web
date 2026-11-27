@@ -1,0 +1,16 @@
+# Cloudflare Pages — header cho toàn site
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Ảnh ít thay đổi: lưu cache 30 ngày (đổi ảnh thì đổi tên file)
+/assets/img/*
+  Cache-Control: public, max-age=2592000
+
+# CSS/JS/config: cache ngắn để sửa config.js là thấy ngay
+/assets/css/*
+  Cache-Control: public, max-age=3600, must-revalidate
+/assets/js/*
+  Cache-Control: public, max-age=300, must-revalidate
