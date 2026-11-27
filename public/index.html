@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..800&amp;display=swap">
   <link rel="preload" as="image" href="assets/img/shampoo-card.webp" type="image/webp">
-  <link rel="stylesheet" href="assets/css/styles.css?v=20261127040339">
+  <link rel="stylesheet" href="assets/css/styles.css?v=20261127041259">
   <script>document.documentElement.classList.add('js')</script>
 
   <script type="application/ld+json">
@@ -39,8 +39,8 @@
     "address": { "@type": "PostalAddress", "streetAddress": "11 đường 18E, Phường Bình Hưng Hòa", "addressLocality": "TP Hồ Chí Minh", "addressCountry": "VN" }
   }
   </script>
-  <script src="assets/js/config.js?v=20261127040339" defer></script>
-  <script src="assets/js/main.js?v=20261127040339" defer></script>
+  <script src="assets/js/config.js?v=20261127041259" defer></script>
+  <script src="assets/js/main.js?v=20261127041259" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Bỏ qua đến nội dung chính</a>
@@ -133,160 +133,164 @@
       <a class="hero__scroll" href="#products" aria-label="Cuộn xuống sản phẩm"><span></span></a>
     </section>
 
-    <!-- ===================== 02 SẢN PHẨM ===================== -->
-    <section class="section" id="products" aria-labelledby="products-title">
+    <!-- ===================== 02 SẢN PHẨM (showroom dạng tab) ===================== -->
+    <section class="section showcase" id="products" aria-labelledby="products-title">
       <div class="container">
         <header class="section-head" data-reveal>
           <h2 class="section-title" id="products-title">Sản phẩm</h2>
-          <nav class="product-index" aria-label="Chuyển nhanh tới sản phẩm" data-spy-nav>
-            <a href="#p-shampoo">Xà bông bọt tuyết</a>
-            <a href="#p-plastic">Phục hồi nhựa nhám</a>
-            <a href="#p-wax">Bóng sơn</a>
-            <a href="#p-tile">Tẩy ố gạch men</a>
-          </nav>
+          <p class="section-head__note section-head__note--dark">Chọn sản phẩm để xem mô tả và hướng dẫn sử dụng.</p>
         </header>
-
-        <!-- Sản phẩm 1 -->
-        <article class="product" id="p-shampoo" aria-labelledby="p-shampoo-title">
-          <figure class="product__media" data-reveal data-tilt>
-            <img data-parallax src="assets/img/shampoo-1000.webp" srcset="assets/img/shampoo-600.webp 600w, assets/img/shampoo-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 560px" alt="Xà bông bọt tuyết NAVI KING — Navi Gloss Shampoo" width="1000" height="1000" loading="lazy">
-          </figure>
-          <div class="product__body" data-reveal>
-            <h3 class="product__name" id="p-shampoo-title">Xà bông bọt tuyết NAVI KING</h3>
-            <p class="product__en">Navi Gloss Shampoo</p>
-            <p class="product__desc">Dung dịch rửa xe tạo bọt tuyết, hỗ trợ làm mềm và cuốn trôi bụi bẩn trên bề mặt xe. Phù hợp cho việc vệ sinh, chăm sóc ô tô và xe máy.</p>
-            <ul class="product__highlights">
-              <li>Tạo lớp bọt tuyết dày mịn</li>
-              <li>Hỗ trợ làm sạch bụi bẩn</li>
-              <li>Dùng cho ô tô và xe máy</li>
-            </ul>
-            <details class="howto" open>
-              <summary>Hướng dẫn sử dụng</summary>
-              <ol>
-                <li>Làm ướt xe bằng nước sạch.</li>
-                <li>Pha nước rửa xe với nước theo tỷ lệ <strong>1:60 – 1:70</strong>.</li>
-                <li>Phun bọt tuyết lên xe, dùng khăn hoặc găng tay rửa xe để làm sạch bề mặt.</li>
-                <li>Xả sạch bằng nước và lau khô bằng khăn microfiber.</li>
-              </ol>
-              <p class="howto__note"><strong>Lưu ý:</strong> Không rửa xe dưới nắng gắt, không để dung dịch khô trên bề mặt xe.</p>
-            </details>
-            <a class="link-arrow" href="#shop">Mua sản phẩm <span aria-hidden="true">→</span></a>
+        <div class="sc" data-showcase data-reveal>
+          <div class="sc-tabs" role="tablist" aria-label="Sản phẩm NAVI KING">
+            <button class="sc-tab" role="tab" id="t-shampoo" aria-controls="p-shampoo" aria-selected="true">
+              <img src="assets/img/shampoo-card.webp" alt="" width="450" height="630" loading="lazy">
+              <span><b>Xà bông bọt tuyết</b><small>Navi Gloss Shampoo</small></span>
+            </button>
+            <button class="sc-tab" role="tab" id="t-plastic" aria-controls="p-plastic" aria-selected="false" tabindex="-1">
+              <img src="assets/img/plastic-card.webp" alt="" width="450" height="630" loading="lazy">
+              <span><b>Phục hồi nhựa nhám</b><small>Navi Plastic Restorer</small></span>
+            </button>
+            <button class="sc-tab" role="tab" id="t-wax" aria-controls="p-wax" aria-selected="false" tabindex="-1">
+              <img src="assets/img/wax-card.webp" alt="" width="450" height="630" loading="lazy">
+              <span><b>Bóng sơn</b><small>Navi Quick Wax</small></span>
+            </button>
+            <button class="sc-tab" role="tab" id="t-tile" aria-controls="p-tile" aria-selected="false" tabindex="-1">
+              <img src="assets/img/tile-card.webp" alt="" width="450" height="630" loading="lazy">
+              <span><b>Tẩy ố gạch men</b><small>Navi Tile Cleaner</small></span>
+            </button>
           </div>
-        </article>
-
-        <!-- Sản phẩm 2 -->
-        <article class="product product--flip" id="p-plastic" aria-labelledby="p-plastic-title">
-          <figure class="product__media" data-reveal data-tilt>
-            <img data-parallax src="assets/img/plastic-1000.webp" srcset="assets/img/plastic-600.webp 600w, assets/img/plastic-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 560px" alt="Phục hồi nhựa nhám NAVI KING — Navi Plastic Restorer" width="1000" height="1000" loading="lazy">
-          </figure>
-          <div class="product__body" data-reveal>
-            <h3 class="product__name" id="p-plastic-title">Phục hồi nhựa nhám NAVI KING</h3>
-            <p class="product__en">Navi Plastic Restorer</p>
-            <p class="product__desc">Sản phẩm chăm sóc bề mặt nhựa nhám, hỗ trợ cải thiện vẻ ngoài của các chi tiết nhựa bị bạc màu, xuống màu theo thời gian; giúp bề mặt trông đậm màu và đồng đều hơn.</p>
-            <a class="link-arrow" href="#shop">Mua sản phẩm <span aria-hidden="true">→</span></a>
+          <div class="sc-panels">
+          <article class="sc-panel is-active" role="tabpanel" id="p-shampoo" aria-labelledby="t-shampoo">
+            <figure class="sc-media">
+              <img src="assets/img/shampoo-1000.webp" srcset="assets/img/shampoo-600.webp 600w, assets/img/shampoo-1000.webp 1000w" sizes="(max-width: 960px) 92vw, 540px" alt="Xà bông bọt tuyết NAVI KING — Navi Gloss Shampoo" width="1000" height="1000" loading="lazy">
+            </figure>
+            <div class="sc-body">
+              <p class="sc-count">01 <span>/ 04</span></p>
+              <h3 class="sc-name">Xà bông bọt tuyết NAVI KING</h3>
+              <p class="sc-en">Navi Gloss Shampoo</p>
+              <p class="sc-desc">Dung dịch rửa xe tạo bọt tuyết, hỗ trợ làm mềm và cuốn trôi bụi bẩn trên bề mặt xe. Phù hợp cho việc vệ sinh, chăm sóc ô tô và xe máy.</p>
+              <ul class="sc-highlights"><li>Tạo lớp bọt tuyết dày mịn</li><li>Hỗ trợ làm sạch bụi bẩn</li><li>Dùng cho ô tô và xe máy</li></ul>
+              <div class="sc-howto">
+                <h4>Hướng dẫn sử dụng</h4>
+                <ol><li>Làm ướt xe bằng nước sạch.</li><li>Pha nước rửa xe với nước theo tỷ lệ <strong>1:60 – 1:70</strong>.</li><li>Phun bọt tuyết lên xe, dùng khăn hoặc găng tay rửa xe để làm sạch bề mặt.</li><li>Xả sạch bằng nước và lau khô bằng khăn microfiber.</li></ol>
+                <p class="sc-note"><strong>Lưu ý:</strong> Không rửa xe dưới nắng gắt, không để dung dịch khô trên bề mặt xe.</p>
+              </div>
+              <div class="sc-actions">
+                <a class="btn btn--primary" href="#shop">Mua sản phẩm <span class="btn__arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn--ghost" href="#contact">Nhận báo giá sỉ</a>
+              </div>
+            </div>
+          </article>
+          <article class="sc-panel" role="tabpanel" id="p-plastic" aria-labelledby="t-plastic" inert>
+            <figure class="sc-media">
+              <img src="assets/img/plastic-1000.webp" srcset="assets/img/plastic-600.webp 600w, assets/img/plastic-1000.webp 1000w" sizes="(max-width: 960px) 92vw, 540px" alt="Phục hồi nhựa nhám NAVI KING — Navi Plastic Restorer" width="1000" height="1000" loading="lazy">
+            </figure>
+            <div class="sc-body">
+              <p class="sc-count">02 <span>/ 04</span></p>
+              <h3 class="sc-name">Phục hồi nhựa nhám NAVI KING</h3>
+              <p class="sc-en">Navi Plastic Restorer</p>
+              <p class="sc-desc">Sản phẩm chăm sóc bề mặt nhựa nhám, hỗ trợ cải thiện vẻ ngoài của các chi tiết nhựa bị bạc màu, xuống màu theo thời gian; giúp bề mặt trông đậm màu và đồng đều hơn.</p>
+              <div class="sc-actions">
+                <a class="btn btn--primary" href="#shop">Mua sản phẩm <span class="btn__arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn--ghost" href="#contact">Nhận báo giá sỉ</a>
+              </div>
+            </div>
+          </article>
+          <article class="sc-panel" role="tabpanel" id="p-wax" aria-labelledby="t-wax" inert>
+            <figure class="sc-media">
+              <img src="assets/img/wax-1000.webp" srcset="assets/img/wax-600.webp 600w, assets/img/wax-1000.webp 1000w" sizes="(max-width: 960px) 92vw, 540px" alt="Bóng sơn NAVI KING — Navi Quick Wax" width="1000" height="1000" loading="lazy">
+            </figure>
+            <div class="sc-body">
+              <p class="sc-count">03 <span>/ 04</span></p>
+              <h3 class="sc-name">Bóng sơn NAVI KING</h3>
+              <p class="sc-en">Navi Quick Wax</p>
+              <p class="sc-desc">Dung dịch dưỡng bóng sơn dạng nước, giúp tăng độ bóng cho bề mặt sơn và tạo hiệu ứng lá sen, hỗ trợ hạn chế bám nước, bụi và vết bẩn.</p>
+              <div class="sc-howto">
+                <h4>Hướng dẫn sử dụng</h4>
+                <ol><li>Lắc đều chai trước khi sử dụng.</li><li>Làm ướt bề mặt cần làm bóng và dùng khăn lau sạch bụi bẩn bên ngoài lớp sơn.</li><li>Xịt dung dịch lên bề mặt sơn cần làm bóng.</li><li>Dùng khăn lau chuyên dụng hoặc vải mềm lau đều đến khi bề mặt sạch và bóng.</li></ol>
+              </div>
+              <div class="sc-actions">
+                <a class="btn btn--primary" href="#shop">Mua sản phẩm <span class="btn__arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn--ghost" href="#contact">Nhận báo giá sỉ</a>
+              </div>
+            </div>
+          </article>
+          <article class="sc-panel" role="tabpanel" id="p-tile" aria-labelledby="t-tile" inert>
+            <figure class="sc-media">
+              <img src="assets/img/tile-1000.webp" srcset="assets/img/tile-600.webp 600w, assets/img/tile-1000.webp 1000w" sizes="(max-width: 960px) 92vw, 540px" alt="Tẩy ố gạch men NAVI KING — Navi Tile Cleaner" width="1000" height="1000" loading="lazy">
+            </figure>
+            <div class="sc-body">
+              <p class="sc-count">04 <span>/ 04</span></p>
+              <h3 class="sc-name">Tẩy ố gạch men NAVI KING</h3>
+              <p class="sc-en">Navi Tile Cleaner</p>
+              <p class="sc-desc">Dung dịch hỗ trợ làm sạch các vết ố vàng, cặn bẩn và mảng bám lâu ngày trên bề mặt gạch men và các khu vực vệ sinh phù hợp.</p>
+              <div class="sc-howto">
+                <h4>Hướng dẫn sử dụng tham khảo</h4>
+                <ol><li>Thấm dung dịch vào khăn microfiber hoặc bùi nhùi chống trầy (làm ẩm bùi nhùi trước khi chà).</li><li>Chà bề mặt cần làm sạch theo chuyển động xoắn ốc.</li><li>Với vết ố nặng, có thể lưu dung dịch trên bề mặt trong vài phút.</li><li>Xả kỹ lại bằng nước sạch.</li></ol>
+                <p class="sc-note"><strong>Lưu ý:</strong> Thử trước ở khu vực nhỏ và không để dung dịch khô trên bề mặt.</p>
+              </div>
+              <div class="sc-actions">
+                <a class="btn btn--primary" href="#shop">Mua sản phẩm <span class="btn__arrow" aria-hidden="true">→</span></a>
+                <a class="btn btn--ghost" href="#contact">Nhận báo giá sỉ</a>
+              </div>
+            </div>
+          </article>
           </div>
-        </article>
-
-        <!-- Sản phẩm 3 -->
-        <article class="product" id="p-wax" aria-labelledby="p-wax-title">
-          <figure class="product__media" data-reveal data-tilt>
-            <img data-parallax src="assets/img/wax-1000.webp" srcset="assets/img/wax-600.webp 600w, assets/img/wax-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 560px" alt="Bóng sơn NAVI KING — Navi Quick Wax" width="1000" height="1000" loading="lazy">
-          </figure>
-          <div class="product__body" data-reveal>
-            <h3 class="product__name" id="p-wax-title">Bóng sơn NAVI KING</h3>
-            <p class="product__en">Navi Quick Wax</p>
-            <p class="product__desc">Dung dịch dưỡng bóng sơn dạng nước, giúp tăng độ bóng cho bề mặt sơn và tạo hiệu ứng lá sen, hỗ trợ hạn chế bám nước, bụi và vết bẩn.</p>
-            <details class="howto" open>
-              <summary>Hướng dẫn sử dụng</summary>
-              <ol>
-                <li>Lắc đều chai trước khi sử dụng.</li>
-                <li>Làm ướt bề mặt cần làm bóng và dùng khăn lau sạch bụi bẩn bên ngoài lớp sơn.</li>
-                <li>Xịt dung dịch lên bề mặt sơn cần làm bóng.</li>
-                <li>Dùng khăn lau chuyên dụng hoặc vải mềm lau đều đến khi bề mặt sạch và bóng.</li>
-              </ol>
-            </details>
-            <a class="link-arrow" href="#shop">Mua sản phẩm <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
-
-        <!-- Sản phẩm 4 -->
-        <article class="product product--flip" id="p-tile" aria-labelledby="p-tile-title">
-          <figure class="product__media" data-reveal data-tilt>
-            <img data-parallax src="assets/img/tile-1000.webp" srcset="assets/img/tile-600.webp 600w, assets/img/tile-1000.webp 1000w" sizes="(max-width: 900px) 100vw, 560px" alt="Tẩy ố gạch men NAVI KING" width="1000" height="1000" loading="lazy">
-          </figure>
-          <div class="product__body" data-reveal>
-            <h3 class="product__name" id="p-tile-title">Tẩy ố gạch men NAVI KING</h3>
-            <p class="product__en">Navi Tile Cleaner</p>
-            <p class="product__desc">Dung dịch hỗ trợ làm sạch các vết ố vàng, cặn bẩn và mảng bám lâu ngày trên bề mặt gạch men và các khu vực vệ sinh phù hợp.</p>
-            <details class="howto" open>
-              <summary>Hướng dẫn sử dụng tham khảo</summary>
-              <ol>
-                <li>Thấm dung dịch vào khăn microfiber hoặc bùi nhùi chống trầy (làm ẩm bùi nhùi trước khi chà).</li>
-                <li>Chà bề mặt cần làm sạch theo chuyển động xoắn ốc.</li>
-                <li>Với vết ố nặng, có thể lưu dung dịch trên bề mặt trong vài phút.</li>
-                <li>Xả kỹ lại bằng nước sạch.</li>
-              </ol>
-              <p class="howto__note"><strong>Lưu ý:</strong> Thử trước ở khu vực nhỏ và không để dung dịch khô trên bề mặt.</p>
-            </details>
-            <a class="link-arrow" href="#shop">Mua sản phẩm <span aria-hidden="true">→</span></a>
-          </div>
-        </article>
+        </div>
       </div>
     </section>
 
-    <!-- ===================== 03 VỀ SG CHEM ===================== -->
+    <!-- ===================== 03 VỀ SG CHEM (lưới bento) ===================== -->
     <section class="section section--tint" id="about" aria-labelledby="about-title">
-      <div class="container split">
-        <div class="split__main" data-reveal>
-          <h2 class="section-title" id="about-title">Về SG CHEM</h2>
-          <p class="lead">SG CHEM hoạt động trong lĩnh vực sản xuất và kinh doanh hóa mỹ phẩm, xà phòng, chất tẩy rửa và các sản phẩm làm bóng, chăm sóc, bảo dưỡng ô tô – xe máy.</p>
-          <p class="body-copy">Doanh nghiệp chú trọng nghiên cứu, cải tiến công thức và phát triển các giải pháp làm sạch hiệu quả, tiện lợi, kinh tế cho khách hàng cá nhân, cửa hàng chăm sóc xe và đối tác phân phối.</p>
-
-          <div class="mv" data-stagger>
-            <div class="mv__item">
-              <h3>Tầm nhìn</h3>
-              <p>Trở thành doanh nghiệp uy tín trong lĩnh vực sản xuất và cung cấp sản phẩm chăm sóc phương tiện tại Việt Nam.</p>
-            </div>
-            <div class="mv__item">
-              <h3>Sứ mệnh</h3>
-              <p>Mang đến sản phẩm làm sạch và chăm sóc phương tiện chất lượng, hiệu quả với chi phí hợp lý; đồng hành cùng khách hàng và đối tác phát triển bền vững.</p>
-            </div>
+      <div class="container">
+        <div class="about-head">
+          <div data-reveal>
+            <h2 class="section-title" id="about-title">Về SG CHEM</h2>
+            <p class="lead">SG CHEM hoạt động trong lĩnh vực sản xuất và kinh doanh hóa mỹ phẩm, xà phòng, chất tẩy rửa và các sản phẩm làm bóng, chăm sóc, bảo dưỡng ô tô – xe máy.</p>
+            <p class="body-copy">Doanh nghiệp chú trọng nghiên cứu, cải tiến công thức và phát triển các giải pháp làm sạch hiệu quả, tiện lợi, kinh tế cho khách hàng cá nhân, cửa hàng chăm sóc xe và đối tác phân phối.</p>
           </div>
-        </div>
-
-        <div class="split__aside">
           <div class="brand-panel" data-reveal>
-            <picture>
-              <source srcset="assets/img/navi-king-shield.webp" type="image/webp">
-              <img src="assets/img/navi-king-shield.png" alt="Logo NAVI KING" width="334" height="318" loading="lazy">
-            </picture>
-            <p>NAVI KING<br><span>CÔNG TY TNHH SX TM TỔNG HỢP SG CHEM</span></p>
+            <img src="assets/img/navi-king-shield.webp" alt="Logo NAVI KING" width="334" height="318" loading="lazy">
+            <p>NAVI KING<span>CÔNG TY TNHH SX TM TỔNG HỢP SG CHEM</span></p>
           </div>
-          <h3 class="list-title">Lĩnh vực hoạt động</h3>
-          <ol class="numbered-list" data-stagger>
-            <li><span class="numbered-list__no">01</span><p>Sản xuất và kinh doanh hóa mỹ phẩm.</p></li>
-            <li><span class="numbered-list__no">02</span><p>Sản xuất xà phòng và sản phẩm tẩy rửa.</p></li>
-            <li><span class="numbered-list__no">03</span><p>Sản phẩm làm sạch, tẩy dầu mỡ và vệ sinh chuyên dụng.</p></li>
-            <li><span class="numbered-list__no">04</span><p>Sản phẩm làm bóng, bảo dưỡng và chăm sóc ô tô – xe máy.</p></li>
-            <li><span class="numbered-list__no">05</span><p>Cung cấp sản phẩm cho tiệm rửa xe, trung tâm chăm sóc xe và hệ thống đại lý phân phối.</p></li>
-          </ol>
         </div>
-      </div>
-    </section>
 
-    <!-- ===================== 04 GIÁ TRỊ CỐT LÕI ===================== -->
-    <section class="section section--dark values-section" aria-labelledby="values-title">
-      <div class="container">
-        <h2 class="section-title" id="values-title" data-reveal>Giá trị cốt lõi</h2>
-      </div>
-      <div class="marquee" data-reveal>
-        <ul class="marquee__track"><li>Chất lượng</li><li>Uy tín</li><li>Đổi mới</li><li>Khách hàng là trọng tâm</li><li>Hợp tác và phát triển</li></ul>
-        <ul class="marquee__track" aria-hidden="true"><li>Chất lượng</li><li>Uy tín</li><li>Đổi mới</li><li>Khách hàng là trọng tâm</li><li>Hợp tác và phát triển</li></ul>
-      </div>
-      <div class="container">
-        <blockquote class="pledge" data-reveal>
-          <p>SG CHEM cam kết không ngừng nâng cao chất lượng sản phẩm, chú trọng hiệu quả sử dụng và xây dựng chính sách hợp tác minh bạch, lâu dài.</p>
-        </blockquote>
+        <div class="bento" data-stagger>
+          <article class="bento__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+            <h3>Tầm nhìn</h3>
+            <p>Trở thành doanh nghiệp uy tín trong lĩnh vực sản xuất và cung cấp sản phẩm chăm sóc phương tiện tại Việt Nam.</p>
+          </article>
+          <article class="bento__item">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8"/><circle cx="12" cy="12" r="3"/></svg>
+            <h3>Sứ mệnh</h3>
+            <p>Mang đến sản phẩm làm sạch và chăm sóc phương tiện chất lượng, hiệu quả với chi phí hợp lý; đồng hành cùng khách hàng và đối tác phát triển bền vững.</p>
+          </article>
+          <article class="bento__item bento__item--values">
+            <h3>Giá trị cốt lõi</h3>
+            <ul class="values">
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3zM8.5 12l2.5 2.5 4.5-5"/></svg>Chất lượng</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.6 5.3 5.8.8-4.2 4.1 1 5.8L12 15.3 6.8 18l1-5.8L3.6 8.1l5.8-.8L12 2z"/></svg>Uy tín</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 006 21h12a1.7 1.7 0 001.5-2.5L14 9V3M7 15h10"/></svg>Đổi mới</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a4 4 0 100-8 4 4 0 000 8zM4 21c0-4 3.6-6.5 8-6.5s8 2.5 8 6.5"/></svg>Khách hàng là trọng tâm</li>
+              <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17l6-6 4 4 8-8M15 7h6v6"/></svg>Hợp tác và phát triển</li>
+            </ul>
+          </article>
+          <article class="bento__item bento__item--fields">
+            <h3>Lĩnh vực hoạt động</h3>
+            <ol class="fields">
+              <li>Sản xuất và kinh doanh hóa mỹ phẩm.</li>
+              <li>Sản xuất xà phòng và sản phẩm tẩy rửa.</li>
+              <li>Sản phẩm làm sạch, tẩy dầu mỡ và vệ sinh chuyên dụng.</li>
+              <li>Sản phẩm làm bóng, bảo dưỡng và chăm sóc ô tô – xe máy.</li>
+              <li>Cung cấp sản phẩm cho tiệm rửa xe, trung tâm chăm sóc xe và hệ thống đại lý phân phối.</li>
+            </ol>
+          </article>
+          <blockquote class="bento__item bento__item--pledge">
+            <h3>Cam kết</h3>
+            <p>SG CHEM cam kết không ngừng nâng cao chất lượng sản phẩm, chú trọng hiệu quả sử dụng và xây dựng chính sách hợp tác minh bạch, lâu dài.</p>
+          </blockquote>
+        </div>
       </div>
     </section>
 

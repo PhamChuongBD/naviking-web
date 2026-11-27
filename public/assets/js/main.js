@@ -171,6 +171,44 @@
     });
   }
 
+  /* ---------- Showroom sản phẩm: tab + liên kết #p-... từ hero/footer ---------- */
+  var sc = document.querySelector('[data-showcase]');
+  if (sc) {
+    var scTabs = Array.prototype.slice.call(sc.querySelectorAll('[role="tab"]'));
+    var activate = function (tab, focus) {
+      scTabs.forEach(function (t) {
+        var on = t === tab, panel = document.getElementById(t.getAttribute('aria-controls'));
+        t.setAttribute('aria-selected', String(on));
+        t.tabIndex = on ? 0 : -1;
+        panel.classList.toggle('is-active', on);
+        if (on) panel.removeAttribute('inert'); else panel.setAttribute('inert', '');
+      });
+      if (focus) tab.focus();
+      if (tab.scrollIntoView && window.matchMedia('(max-width: 960px)').matches) tab.scrollIntoView({ block: 'nearest', inline: 'center', behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+    sc.querySelector('[role="tablist"]').addEventListener('click', function (e) {
+      var t = e.target.closest('[role="tab"]'); if (t) activate(t, false);
+    });
+    sc.querySelector('[role="tablist"]').addEventListener('keydown', function (e) {
+      var i = scTabs.indexOf(document.activeElement); if (i < 0) return;
+      var n = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: scTabs.length - 1 }[e.key];
+      if (n === undefined) return;
+      e.preventDefault(); activate(scTabs[(n + scTabs.length) % scTabs.length], true);
+    });
+    var openProduct = function (hash) {
+      var tab = sc.querySelector('[aria-controls="' + hash.slice(1) + '"]');
+      if (!tab) return false;
+      activate(tab, false);
+      document.getElementById('products').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+      return true;
+    };
+    document.addEventListener('click', function (e) {
+      var a = e.target.closest('a[href^="#p-"]');
+      if (a && openProduct(a.getAttribute('href'))) { e.preventDefault(); history.replaceState(null, '', a.getAttribute('href')); }
+    });
+    if (/^#p-/.test(location.hash)) openProduct(location.hash);
+  }
+
   /* ---------- Đánh dấu mục đang xem trên menu và chip sản phẩm ---------- */
   if ('IntersectionObserver' in window) {
     var spy = function (selector, links) {
@@ -187,7 +225,6 @@
       document.querySelectorAll(selector).forEach(function (sec) { if (map[sec.id]) sio.observe(sec); });
     };
     spy('main > section[id]', Array.prototype.slice.call(document.querySelectorAll('.site-nav__link')));
-    spy('.product[id]', Array.prototype.slice.call(document.querySelectorAll('[data-spy-nav] a')));
   }
 
   /* ---------- Form liên hệ ---------- */
